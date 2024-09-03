@@ -1,5 +1,6 @@
 
 Hello!
+
 Our group is composed of Aleksandra, Laura and Rosa, and in this blog post we will discuss the "what" and the "why" of XR Technologies :).
 
 So first of all, what is XR and what does it encompass?
@@ -7,10 +8,10 @@ So first of all, what is XR and what does it encompass?
 # Definitions
 Well, XR is an umbrella term, and it stands for Extended Reality. However, Extended Reality is a spectrum, ranging from AR, to MR, to AV, to VR. But what do each of these abbreviations stand for? Let's see:
 
-AR: **Augmented Reality**, where virtual objects are overlayed on top of reality. The environment is almost fully real, with incorporated virtual objects.
-MR: **Mixed Reality**, which has two definitions. It's either a synonym for XR, or an extension of Augmented Reality with an emphasis in the possibility to *interact with the virtual objects* introduced.
-AV: **Augmented Virtuality**, in which real life objects are incorporated into the virtual invironment - so, it is mostly virtual.
-VR: **Virtual Reality**, where the environment is fully virtual.
+- AR: **Augmented Reality**, where virtual objects are overlayed on top of reality. The environment is almost fully real, with incorporated virtual objects.
+- MR: **Mixed Reality**, which has two definitions. It's either a synonym for XR, or an extension of Augmented Reality with an emphasis in the possibility to *interact with the virtual objects* introduced.
+- AV: **Augmented Virtuality**, in which real life objects are incorporated into the virtual invironment - so, it is mostly virtual.
+- VR: **Virtual Reality**, where the environment is fully virtual.
 
 If one wanted to compare them, one could say that, at core, what these terminologies represent is the **proportion** in which reality and virtuality are combined.
 
@@ -24,9 +25,10 @@ When it comes to Mobile XR, the input technology is the camera (and maybe the se
 ### Headset XR
 When it comes to experiencing XR through the headset, though, is when things become even more different than the digital interactions we're used to. As mentioned, most of our digital interactions are usually with screens. But now, the screen sits right before our eyes, and our way of interacting with it can take a multitude of forms - all the way from our body movement itself, a console controller, a XR-specific controller, or maybe even something very specific to the software we're using, like a steering wheel with brakes. So XR experiences with the headset are not only very different from our usual digital interactions, but they can also be very varied in nature! 
 
+### In General,
 XR applications provide a more fulfilling experience because they either bring new elements to reality or create an entirely new reality and immerse us in it, by using stereo sounds, wide vision and immersive effects. It adds value by giving the user the sense of being present in the virtual world somehow, which can mean faster and, especially, more accurate interactions with the virtual elements at use than any other technology could provide.
 
-# The Catch - Immersion
+# The Catch
 
 The catch with XR is the immersion factor.
 
