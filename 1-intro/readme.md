@@ -10,7 +10,9 @@ How do XR applications compare to traditional desktop and mobile applications? A
 XR applications provide more fulfilling experience because they simulate reality more accurately using stereo sounds, wide vision and immersive effects. 
 Advantages:
 - more fulfilling user experience,
+
 Disadvantages:
 - motion sickness,
 - disassotiation from reality
   
+### add mention about aiding disabled people namely the blind by acting as their eyes and steering away from danger, orrrrr even deaf people through warning vibrations
