@@ -20,7 +20,7 @@ But how does Extended Reality compare to the other digital interactions we had b
 # Comparison
 
 ### Mobile XR
-When it comes to Mobile XR, the input technology is the camera (and maybe the sensors) of our phone. We see the digital reality on the screen and also interact with it through the screen, most of the time. So the main difference with how we usually do things is that, to experience Extended Reality, we have to point our camera at something in order to "augment" it with our phone (AR), or to "see the virtual reality" through our phone camera & screen (VR).
+When it comes to Mobile XR, the input technology is the camera (and maybe the sensors) of our phone. We see the digital reality on the screen and also interact with it through the screen, most of the time. So the main difference with how we usually do things is that, to experience Extended Reality, we have to point our camera at something in order to "augment" it with our phone (AR), or to "see the virtual reality" using our phone giroscope & screen (VR).
 
 ### Headset XR
 When it comes to experiencing XR through the headset, though, is when things become even more different than the digital interactions we're used to. As mentioned, most of our digital interactions are usually with screens. But now, the screen sits right before our eyes, and our way of interacting with it can take a multitude of forms - all the way from our body movement itself, a console controller, a XR-specific controller, or maybe even something very specific to the software we're using, like a steering wheel with brakes. So XR experiences with the headset are not only very different from our usual digital interactions, but they can also be very varied in nature! 
