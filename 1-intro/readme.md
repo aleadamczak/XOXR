@@ -8,7 +8,7 @@ So first of all, what is XR and what does it encompass?
 # Definitions
 Well, XR is an umbrella term, and it stands for Extended Reality. However, Extended Reality is a spectrum, ranging from AR, to MR, to AV, to VR. But what do each of these abbreviations stand for? Let's see:
 
-- AR: **Augmented Reality**, where virtual objects are overlayed on top of reality. The environment is almost fully real, with incorporated virtual objects.
+- AR: **Augmented Reality**, where virtual objects are overlayed on top of reality. In other words, the environment is almost fully real, with incorporated virtual objects.
 - MR: **Mixed Reality**, which has two definitions. It's either a synonym for XR, or an extension of Augmented Reality with an emphasis in the possibility to *interact with the virtual objects* introduced.
 - AV: **Augmented Virtuality**, in which real life objects are incorporated into the virtual invironment - so, it is mostly virtual.
 - VR: **Virtual Reality**, where the environment is fully virtual.
