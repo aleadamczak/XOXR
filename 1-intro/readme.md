@@ -13,7 +13,7 @@ Well, XR is an umbrella term, and it stands for Extended Reality. However, Exten
 - AV: **Augmented Virtuality**, in which real life objects are incorporated into the virtual invironment - so, it is mostly virtual.
 - VR: **Virtual Reality**, where the environment is fully virtual.
 
-If one wanted to compare them, one could say that, at core, what these terminologies represent is the **proportion** in which reality and virtuality are combined.
+If one wanted to compare them, one could say that, at core, what these terminologies represent is the **proportion** of both reality and virtuality when the two are combined.
 
 But how does Extended Reality compare to the other digital interactions we had before?
 
