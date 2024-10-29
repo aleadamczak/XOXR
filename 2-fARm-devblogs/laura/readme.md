@@ -95,7 +95,7 @@ In the Scene Inspector, in the Animal prefab’s component “Feeding”, the de
 
 Below is the dropdown menu in the editor.
 
-<img width="444" alt="Screenshot 2024-10-29 at 11 45 18" src="https://github.com/user-attachments/assets/9813218b-2e2c-4832-b094-2727d4435165">
+<img width="444" alt="381089854-9813218b-2e2c-4832-b094-2727d4435165" src="https://github.com/user-attachments/assets/2a8fa960-7d19-4b1f-be07-14521c44323a">
 
 Developers, please don't choose a Tool as food for the animal! The trouble of separating Tools and Food was greater than just having them all under the Items type.
 
@@ -110,16 +110,19 @@ When it comes to using tools on the animals, a question was posed - despite all 
 
 All animals have the same one script - **Produce.cs**, but in the Scene Inspector, the developer can choose which “type of produce” an animal would produce from each tool: the Sword, the Shears and the Bucket.
 
-(Screenshot of how it looks in the inspector)
+The screenshot below is how the Produce component looks like for the Cow - she gives Beef when the Sword is used, nothing when the Shears are used, and Milk when the Bucket is used.
+
+<img width="437" alt="Screenshot 2024-10-29 at 11 48 27" src="https://github.com/user-attachments/assets/228dc8e9-e668-46e9-a0e2-b45ef1d247de">
 
 When it came to the Sword, all the animals had to be assigned their specific meat type (Beef for Cow, Pork for Pig, etc.), so it was kind of “mandatory”, but when it came to the remaining tools, only the Cow had the Milk for the Bucket and the Sheep had the Wool for the Shears. And that was okay! The rest of the animals would have that set as “Nothing” and simply give you nothing if you tried to use the wrong tool on them.
 
-(screenshot of GetProduce() from Produce script)
-(screenshot of GetMilk() from Produce script)
+
+<img width="842" alt="GetProduce Script" src="https://github.com/user-attachments/assets/533e962e-8791-43ea-bfeb-88971376a485">
+<img width="583" alt="UseBucket Script" src="https://github.com/user-attachments/assets/ce55f6b0-1077-45df-9366-8919bb2d078d">
 
 The screenshots above illustrate how the Produce script uses the GUI Manager to see what tool is selected, and only returns a piece of produce to the player if that tool is valid on that animal.
 
-Produce Quality based on Animal Satisfaction Calculation
+## Produce Quality based on Animal Satisfaction Calculation
 Well, that’s a long title, but it is what it is - there had to be logic regarding the quality of the produce.
 
 This was as simple as having a switch statement stating how much each type of Produce was worth, and applying some math on it depending on its quality. If the animal was very unhappy, the produce’s value would halve, if it was okay it would be the original value, and if he was very happy, the produce is valued double.
@@ -140,17 +143,22 @@ All of this quality management was happening behind the scenes, but it was hard 
 
 And on top of that, it fades in and out beautifully!
 
-This was all achieved by controlling the Canvas with a script ProducePopUp.cs, which has an editable list of all the Sprites and which type of produce they are an icon for!
+This was all achieved by controlling the Canvas with a script ProducePopUp.cs, which has, in the Inspector, an editable list of all the Sprites and which type of produce they are an icon for!
 
-(screenshot of the map of Sprites)
+<img width="437" alt="Produce Sprite List for ProducePopUp" src="https://github.com/user-attachments/assets/dff62afe-fbea-4446-9060-bceb51e495da">
 
 When the Script is initialized, it turns this list into a Dictionary for faster lookup when needed, because otherwise, whenever we would want a specific sprite, we would need to iterate through the whole list and that didn’t sound right…
 
 Also, for the case when the player acquires produce faster than it can be displayed with the animations, the produce items acquired are put in a queue and played sequentially! It looks very smooth.
 
-The fading in and out was also a little bit challenging because the Canvas object in Unity doesn’t have a feature to change its transparency in its entirety, so I actually needed a support feature that got all of its children and changed their alpha (opacity) at the same time. Fortunately, it was possible and looks awesome.
+![ezgif-4-a7ae2d4cbe](https://github.com/user-attachments/assets/b887e189-f27f-4a39-b08b-7cbcfffbbf72)
 
-(Add screen recording gif of the produce UI feedback)
+The fading in and out was also a little bit challenging because the Canvas object in Unity doesn’t have a feature to change its transparency in its entirety, so I actually needed a support feature that got all of its children and changed their alpha (opacity) at the same time. Fortunately, it was possible and looks awesome, as it can be seen in the screen recording above).
+
+The screenshot below is the function that manages changing the opacity of all the child elements of the Produce Pop Up. All these elements are either images or text, hence the double "if". It also has a flag "transition" which dictates whether or not the change in opacity should be smooth :).
+
+<img width="848" alt="Screenshot 2024-10-29 at 11 58 34" src="https://github.com/user-attachments/assets/ac55e404-6886-440f-8db4-7313703ba1cc">
+
 
 ## Produce Cooldown
 In fARm, it’s possible to get Eggs from Chickens, Wool from Sheep and Milk from Cows. But there’s a lot of nuance in that - you can’t continuously get all of this produce, the animals need time to regenerate it! It took a script to manage each of these Produce items and I will elaborate a bit below.
@@ -158,18 +166,20 @@ In fARm, it’s possible to get Eggs from Chickens, Wool from Sheep and Milk fro
 ### Chicken Egg Drop & Pick-Up Mechanic
 The Chicken has a script called EggDropper that does exactly what the name suggests - every x seconds, the Chicken drops an egg. The egg is instantiated behind her and has the quality of her satisfaction when she dropped it. 
 
-(Show screen recording of Chicken dropping egg)
+![ezgif-3-4232228de2](https://github.com/user-attachments/assets/3d130f2f-4103-4ab4-b67c-65d372d05963)
 
 As for picking up the eggs, the Egg has a script called EggPickup that detects clicks on it and gets destroyed and gives money to the player when that happens.
 
 ### Sheep Wool Regrowth
 The Sheep has a script that manages the Growth and Removal of her wool. This one is interesting, because it actually holds a reference to the “wool” GameObjects on her — yes, the Sheep model was so wonderfully rigged that it is possible to disable the wool separately!! 
 
+<img width="575" alt="Screenshot 2024-10-29 at 12 08 12" src="https://github.com/user-attachments/assets/bd808102-3ed9-46ac-931f-f22ad0f7e51e">
+
 <img width="332" alt="private void SetFur(bool active)" src="https://github.com/user-attachments/assets/e68b6022-3e55-4a63-a2e1-91952eccc14d">
 
 So when we cut her wool, that’s just what happens: The wool is disabled, a timer starts, and within a minute or so, it regrows - which is observed by simply seeing that the wool reappears.
 
-(Show screen recording of Sheep getting sheared)
+![ezgif-7-e371106b96](https://github.com/user-attachments/assets/c6395327-6f16-4fa9-b01d-87adb9e097db)
 
 ### Cow Milk Regeneration & Visual Cues
 The same applies to the cow - she has a MilkManager script that establishes how often the player can Milk the cow. On top of that, in order for the player to know that the Cow is ready to be milked, a ParticleSystem was made that shows “milk buckets” flying in a small radius around her, which serves as a perfect visual cue.
