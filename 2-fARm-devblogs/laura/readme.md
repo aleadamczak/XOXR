@@ -3,7 +3,7 @@
 ### Intro
 Hey, this is Laura and this is my devblog for the Project “fARm”:). The game name makes a pun with “AR” and “farm”, which we thought was super amusing.
 
-The appeal of making this game in AR is to enhance the stress of a farm simulation game, because not only do the animals get needy very quickly, the more animals you have, the more you have to run around to tend to all of their needs and collect all of their produce, and having to do this physically adds to the thrill.
+The appeal of making this game in AR is to enhance the stress of a farm simulation game, because not only do the animals get needy very quickly, the more animals you have, the more you have to run around to tend to all of their needs and collect all of their produce, and having to move and chase them physically adds to the thrill.
 
 We were three people, so during development, we iteratively took ownership of certain features off of our requirement list. From time to time, we would elaborate on top of each other’s code if it seemed fitting (for example, for reusing functionality).
 
