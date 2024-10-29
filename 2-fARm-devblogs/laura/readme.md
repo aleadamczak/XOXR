@@ -54,7 +54,7 @@ I also had to consider that we had 3 four-legged animals and one with just two l
 ### Animation - Dying
 Another animation that was much needed was the dying animation, and as simple as it sounds to make the animal “fall to the side”, it was a nightmare and took way more hours than I would like to admit!
 
-At first, it seemed easy: since the animals had Colliders and Rigidbodies, I could just rotate them, and they’d fall with gravity. But then, I realized that they’d push each other off ledges, and also that the scene could quickly get overcrowded. So, I made the animals Kinematic to prevent them from colliding with each other.
+At first, it seemed easy: since the animals had Colliders and Rigidbodies, I could just rotate them, and they’d fall with gravity. But then, I realized that they’d push each other off ledges, and also that the scene could quickly get overcrowded with collisions... So I made the animals Kinematic to prevent that from happening.
 
 Of course, this meant gravity wasn’t on my side anymore… So now, I had to manually rotate each animal and make it fall to the ground level. It sounds straightforward, but getting it to look right took a lot of fine-tuning, not to mention I had to do it for all adult & baby versions of the animals, which come in different sizes.
 
