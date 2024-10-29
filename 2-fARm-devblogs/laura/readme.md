@@ -1,4 +1,4 @@
-#fARm Devblog - Laura
+# fARm Devblog - Laura
 
 ### Intro
 Hey, this is Laura and this is my devblog for the Project “fARm”:). The game name makes a pun with “AR” and “farm”, which we thought was super amusing.
@@ -35,12 +35,17 @@ Below are: a list of the features I took ownership of, and a list of features I 
 One of the reasons I brought up the idea of making a Farm Simulator heavily inspired on Minecraft was that I was 99% sure that models for the farm animals could be found online - so I took it upon myself to find them, import them and animate them.
 
 I was fortunate enough to find them rigged - it took some digging online, but then it was as easy as importing their model file and manipulating each “part” of them however I wanted!
+
+<img width="578" alt="Screenshot 2024-10-29 at 11 17 42" src="https://github.com/user-attachments/assets/0e88d650-0c96-43f0-9206-0822a951d7b0">
 ￼
 There were some challenges regarding scaling them, managing their position (especially on the Y axis, because some just wanted to float eternally) and sometimes even their rotation, but I ended up managing to make proper prefabs that could be easily expanded upon.
+
+![url](https://github.com/user-attachments/assets/f2bb613e-be7a-41d7-8b3e-c44a087c0cd4)
 ￼
 ### Animation - Walking
 The first animation to make was the Walking animation for when they idle around. This involved finding their front & back /  left & right leg GameObjects and rotating them around the Z axis with a sine function, since it’s an oscillating movement. It worked perfectly!
-(add gif of the walking animation)
+
+![image](https://github.com/user-attachments/assets/a8d6f948-fd20-4bcb-bd0e-48c68840ec0c)
 
 I also had to consider that we had 3 four-legged animals and one with just two legs (the chicken), so I actually had to make separate scripts for these two types of walking animations. But it was simple because they were the same at core.
 
@@ -114,15 +119,15 @@ Well, that’s a long title, but it is what it is - there had to be logic regard
 
 This was as simple as having a switch statement stating how much each type of Produce was worth, and applying some math on it depending on its quality. If the animal was very unhappy, the produce’s value would halve, if it was okay it would be the original value, and if he was very happy, the produce is valued double.
 
-￼
+<img width="701" alt="Screenshot 2024-10-28 at 16 54 53" src="https://github.com/user-attachments/assets/97f4e19f-4ef1-4503-82d9-2712e8058dc8">
 
 And how was this “produce quality” calculated? Well, it referenced the Hunger and Thirst controllers of the animal and inquired them as seen below:
 
-￼
+<img width="410" alt="int hunger = hungerController hunger;" src="https://github.com/user-attachments/assets/f83987ba-d8f4-4168-9433-25ed831acc72">
 
 If both Hunger & Thirst are above 50%, the quality is 3. If any of them is between 30 and 50, the quality is 2, and if any of them goes below 30%, the quality is 1.
 
-# Produce Acquisition UI Feedback
+## Produce Acquisition UI Feedback
 All of this quality management was happening behind the scenes, but it was hard to tell, as a player, that it was really there. So to really enhance the user experience and transparency, I added some feedback in the UI. When you acquire produce from an animal, you get to see:
 - The icon of the produce acquired
 - A number of stars representing the quality
@@ -154,7 +159,8 @@ As for picking up the eggs, the Egg has a script called EggPickup that detects c
 
 ### Sheep Wool Regrowth
 The Sheep has a script that manages the Growth and Removal of her wool. This one is interesting, because it actually holds a reference to the “wool” GameObjects on her — yes, the Sheep model was so wonderfully rigged that it is possible to disable the wool separately!! 
-￼
+
+<img width="332" alt="private void SetFur(bool active)" src="https://github.com/user-attachments/assets/e68b6022-3e55-4a63-a2e1-91952eccc14d">
 
 So when we cut her wool, that’s just what happens: The wool is disabled, a timer starts, and within a minute or so, it regrows - which is observed by simply seeing that the wool reappears.
 
@@ -186,14 +192,15 @@ The AnimalSoundController script is one of the things I am the most proud of in 
 
 It makes use of a single Audio Source component in the animal, and in the Inspector, takes a list or a single Audio Clips for each type of sound, as mentioned above, and as shown in the screenshot below:
 
-￼
+<img width="462" alt="public class AnimalSoundController  MonoBehaviour" src="https://github.com/user-attachments/assets/fb4ebc50-bfb1-4fa5-a9cd-c243d419caec">
 
 It is then super easy to add that specific animal’s clips to its Prefab in the Inspector!:
-￼
+
+<img width="418" alt="Animal Sound Controller (Script)" src="https://github.com/user-attachments/assets/7c46d226-9e41-41e5-b873-c763cebb43ec">
 
 And if it’s a clip the animal doesn’t need, it is perfectly fine to just leave it empty.
 
-￼
+<img width="492" alt="void SetClipAndPlay(AudioClip clip)" src="https://github.com/user-attachments/assets/205669ff-cb7a-4d0f-a418-05978531bd39">
 
 The AnimalSoundController then makes extensive use of these two functions to make the right clip play from the single AudioSource: in the right moment, it interrupts whatever the animal’s Audio Source was playing, sets the clip on it and plays it. If needed, it can also get a random clip if there is more than one available.
 
