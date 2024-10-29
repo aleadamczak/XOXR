@@ -113,15 +113,15 @@ When it comes to using tools on the animals, a question was posed - despite all 
 
 All animals have the same one script - **Produce.cs**, but in the Scene Inspector, the developer can choose which “type of produce” an animal would produce from each tool: the Sword, the Shears and the Bucket.
 
-The screenshot below is how the Produce component looks like for the Cow - she gives Beef when the Sword is used, nothing when the Shears are used, and Milk when the Bucket is used.
+The screenshot below is how the Produce component looks like for the Cow - she gives Beef when the Sword is used, Milk when the Bucket is used, and nothing when the Shears are used.
 
-<img width="437" alt="Screenshot 2024-10-29 at 11 48 27" src="https://github.com/user-attachments/assets/228dc8e9-e668-46e9-a0e2-b45ef1d247de">
+<img width="400" alt="Screenshot 2024-10-29 at 11 48 27" src="https://github.com/user-attachments/assets/228dc8e9-e668-46e9-a0e2-b45ef1d247de">
 
 When it came to the Sword, all the animals had to be assigned their specific meat type (Beef for Cow, Pork for Pig, etc.), so it was kind of “mandatory”, but when it came to the remaining tools, only the Cow had the Milk for the Bucket and the Sheep had the Wool for the Shears. And that was okay! The rest of the animals would have that set as “Nothing” and simply give you nothing if you tried to use the wrong tool on them.
 
 
-<img width="842" alt="GetProduce Script" src="https://github.com/user-attachments/assets/533e962e-8791-43ea-bfeb-88971376a485">
-<img width="583" alt="UseBucket Script" src="https://github.com/user-attachments/assets/ce55f6b0-1077-45df-9366-8919bb2d078d">
+<img width="400" alt="GetProduce Script" src="https://github.com/user-attachments/assets/533e962e-8791-43ea-bfeb-88971376a485">
+<img width="400" alt="UseBucket Script" src="https://github.com/user-attachments/assets/ce55f6b0-1077-45df-9366-8919bb2d078d">
 
 The screenshots above illustrate how the Produce script uses the GUI Manager to see what tool is selected, and only returns a piece of produce to the player if that tool is valid on that animal.
 
@@ -130,11 +130,11 @@ Well, that’s a long title, but it is what it is - there had to be logic regard
 
 This was as simple as having a switch statement stating how much each type of Produce was worth, and applying some math on it depending on its quality. If the animal was very unhappy, the produce’s value would halve, if it was okay it would be the original value, and if he was very happy, the produce is valued double.
 
-<img width="701" alt="Screenshot 2024-10-28 at 16 54 53" src="https://github.com/user-attachments/assets/97f4e19f-4ef1-4503-82d9-2712e8058dc8">
+<img width="400" alt="Screenshot 2024-10-28 at 16 54 53" src="https://github.com/user-attachments/assets/97f4e19f-4ef1-4503-82d9-2712e8058dc8">
 
 And how was this “produce quality” calculated? Well, it referenced the Hunger and Thirst controllers of the animal and inquired them as seen below:
 
-<img width="410" alt="int hunger = hungerController hunger;" src="https://github.com/user-attachments/assets/f83987ba-d8f4-4168-9433-25ed831acc72">
+<img width="400" alt="int hunger = hungerController hunger;" src="https://github.com/user-attachments/assets/f83987ba-d8f4-4168-9433-25ed831acc72">
 
 If both Hunger & Thirst are above 50%, the quality is 3. If any of them is between 30 and 50, the quality is 2, and if any of them goes below 30%, the quality is 1.
 
@@ -148,7 +148,7 @@ And on top of that, it fades in and out beautifully!
 
 This was all achieved by controlling the Canvas with a script ProducePopUp.cs, which has, in the Inspector, an editable list of all the Sprites and which type of produce they are an icon for!
 
-<img width="437" alt="Produce Sprite List for ProducePopUp" src="https://github.com/user-attachments/assets/dff62afe-fbea-4446-9060-bceb51e495da">
+<img width="400" alt="Produce Sprite List for ProducePopUp" src="https://github.com/user-attachments/assets/dff62afe-fbea-4446-9060-bceb51e495da">
 
 When the Script is initialized, it turns this list into a Dictionary for faster lookup when needed, because otherwise, whenever we would want a specific sprite, we would need to iterate through the whole list and that didn’t sound right…
 
@@ -160,7 +160,7 @@ The fading in and out was also a little bit challenging because the Canvas objec
 
 The screenshot below is the function that manages changing the opacity of all the child elements of the Produce Pop Up. All these elements are either images or text, hence the double "if". It also has a flag "transition" which dictates whether or not the change in opacity should be smooth :).
 
-<img width="848" alt="Screenshot 2024-10-29 at 11 58 34" src="https://github.com/user-attachments/assets/ac55e404-6886-440f-8db4-7313703ba1cc">
+<img width="400" alt="Screenshot 2024-10-29 at 11 58 34" src="https://github.com/user-attachments/assets/ac55e404-6886-440f-8db4-7313703ba1cc">
 
 
 ## Produce Cooldown
@@ -176,9 +176,9 @@ As for picking up the eggs, the Egg has a script called EggPickup that detects c
 ### Sheep Wool Regrowth
 The Sheep has a script that manages the Growth and Removal of her wool. This one is interesting, because it actually holds a reference to the “wool” GameObjects on her — yes, the Sheep model was so wonderfully rigged that it is possible to disable the wool separately!! 
 
-<img width="575" alt="Screenshot 2024-10-29 at 12 08 12" src="https://github.com/user-attachments/assets/bd808102-3ed9-46ac-931f-f22ad0f7e51e">
+<img width="400" alt="Screenshot 2024-10-29 at 12 08 12" src="https://github.com/user-attachments/assets/bd808102-3ed9-46ac-931f-f22ad0f7e51e">
 
-<img width="332" alt="private void SetFur(bool active)" src="https://github.com/user-attachments/assets/e68b6022-3e55-4a63-a2e1-91952eccc14d">
+<img width="300" alt="private void SetFur(bool active)" src="https://github.com/user-attachments/assets/e68b6022-3e55-4a63-a2e1-91952eccc14d">
 
 So when we cut her wool, that’s just what happens: The wool is disabled, a timer starts, and within a minute or so, it regrows - which is observed by simply seeing that the wool reappears.
 
@@ -210,15 +210,15 @@ The AnimalSoundController script is one of the things I am the most proud of in 
 
 It makes use of a single Audio Source component in the animal, and in the Inspector, takes a list or a single Audio Clips for each type of sound, as mentioned above, and as shown in the screenshot below:
 
-<img width="462" alt="public class AnimalSoundController  MonoBehaviour" src="https://github.com/user-attachments/assets/fb4ebc50-bfb1-4fa5-a9cd-c243d419caec">
+<img width="400" alt="public class AnimalSoundController  MonoBehaviour" src="https://github.com/user-attachments/assets/fb4ebc50-bfb1-4fa5-a9cd-c243d419caec">
 
 It is then super easy to add that specific animal’s clips to its Prefab in the Inspector!:
 
-<img width="418" alt="Animal Sound Controller (Script)" src="https://github.com/user-attachments/assets/7c46d226-9e41-41e5-b873-c763cebb43ec">
+<img width="400" alt="Animal Sound Controller (Script)" src="https://github.com/user-attachments/assets/7c46d226-9e41-41e5-b873-c763cebb43ec">
 
 And if it’s a clip the animal doesn’t need, it is perfectly fine to just leave it empty.
 
-<img width="492" alt="void SetClipAndPlay(AudioClip clip)" src="https://github.com/user-attachments/assets/205669ff-cb7a-4d0f-a418-05978531bd39">
+<img width="400" alt="void SetClipAndPlay(AudioClip clip)" src="https://github.com/user-attachments/assets/205669ff-cb7a-4d0f-a418-05978531bd39">
 
 The AnimalSoundController then makes extensive use of these two functions to make the right clip play from the single AudioSource: in the right moment, it interrupts whatever the animal’s Audio Source was playing, sets the clip on it and plays it. If needed, it can also get a random clip if there is more than one available.
 
