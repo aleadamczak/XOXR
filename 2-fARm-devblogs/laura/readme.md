@@ -226,6 +226,7 @@ This one is simple enough, but given that the animals are babies either when we 
 
 The BabyGrowth script starts a timer on the baby’s birth or acquisition and, when the time comes, replaces it with its adult counterpart - so, at the same time, the Baby GameObject is destroyed, and the adult one is instantiated with the same position, rotation, and satisfaction! Meaning that the hunger and thirst are actually transferred to the adult as well.
 
+![ezgif-1-fd615c83bf](https://github.com/user-attachments/assets/19aac1e1-984a-47c0-9c24-562881914a30)
 
 # HELPED FEATURES
 
@@ -236,7 +237,7 @@ Due to this demand of a faster way to swap between items, I changed the Long Pre
 
 This also included adding arrows to the GUI to improve understanding that it is possible to change the item selectable in certain “toolbar squares”.
 
-(screenshot of the toolbar with the arrows)
+![ezgif-7-69f4d6f6a5](https://github.com/user-attachments/assets/55099bc4-6023-4181-af04-952f89ce56ce)
 
 ## Shop Recoloring
 I built on top of Ola’s work and changed some of the spacing and coloring in the shop in order for it to have more contrast and be more readable and understandable at a first glance. For this, I am grateful that the Shop’s Canvas object was super well-organized with a good GameObject “family tree”. It made it a lot easier to make changes to the shop :)).
@@ -244,7 +245,7 @@ I built on top of Ola’s work and changed some of the spacing and coloring in t
 ## Pregnancy Visual Cue
 The perfect way to let Minecraft players know that there was a pregnancy functionality was to imitate the way it works in Minecraft - by adding a ParticleSystem full of heart icons around the parents when they became pregnant! This was as simple as assigning the Heart Sprite in the Particle System and then instantiating the Particle System briefly whenever a Pregnancy was started.
 
-(Screen recording of the heart particle system for pregnancy)
+![ezgif-3-a6bab43650](https://github.com/user-attachments/assets/73642a81-6c12-448b-bd87-0688afaa7d2f)
 
 # Wrap-up
 This project was a pleasure to work on - I am proud of all my scripts and how extendable are for the most part - I learned lots in the GMD course about the basics of Unity, and that REALLY enabled me to perform in this AR project and take it a step further, because now that I know the basics, I can foresee challenges and optimize the code so that it’s performing and extendable! I look forward to the VR project as well to keep the ball rolling :))
