@@ -183,12 +183,12 @@ The Sheep has a script that manages the Growth and Removal of her wool. This one
 
 So when we cut her wool, that’s just what happens: The wool is disabled, a timer starts, and within a minute or so, it regrows - which is observed by simply seeing that the wool reappears.
 
-![ezgif-7-e371106b96](https://github.com/user-attachments/assets/c6395327-6f16-4fa9-b01d-87adb9e097db)
+![ezgif-1-0665358556](https://github.com/user-attachments/assets/a5dc6b2c-a579-4c23-965a-6f05781209aa)
 
 ### Cow Milk Regeneration & Visual Cues
 The same applies to the cow - she has a MilkManager script that establishes how often the player can Milk the cow. On top of that, in order for the player to know that the Cow is ready to be milked, a ParticleSystem was made that shows “milk buckets” flying in a small radius around her, which serves as a perfect visual cue.
 
-(Show screen recording of cow with milk buckets, ready to be milked)
+![ezgif-7-c1fa57daaa](https://github.com/user-attachments/assets/ccf526d0-2c63-4fb2-86a0-e82aaebd3c09)
 
 ## Audio Management
 
