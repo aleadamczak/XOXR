@@ -82,21 +82,23 @@ In retrospective, my state management might be a little bit “spaghetti”, but
 I also took ownership of the interaction with the animals, meaning - making things happen when you click on one of them, depending on what tool you have selected from the GUI.
 
 It is possible to interact with the animal in the four following ways:
-- Give water the animal to quench its thirst
-- Use a tool on it (such as a bucket to collect Milk or shears to collect Wool)
-- Use a sword on it to kill it for meat
-- Give it food to satisfy its hunger
+- Give Water the animal to quench its thirst
+- Use a Tool on it (such as a Bucket to collect Milk or Shears to collect Wool)
+- Use a Sword on it to kill it for meat
+- Give it Food to satisfy its hunger
+
+<img width="251" alt="Screenshot 2024-10-29 at 17 41 04" src="https://github.com/user-attachments/assets/8cd66637-3ee4-4bc3-b89a-7351c4f521bd">
 
 Despite there being four types of interactions, I managed them through just two scripts: **Feeding.cs** for Food & Water, and **Produce.cs** for Tools and Slaughter.
 
 ### Food & Water
-Despite the animals eating different types of food depending on their species, it was easy to centralize all the logic for making sure the player could only feed it with the right food in hand.
+Even though the animals eat different types of food depending on their species, it was easy to centralize all the logic for making sure the player could only feed it with the right food in hand.
 
 In the Scene Inspector, in the Animal prefab’s component “Feeding”, the developer can choose from a dropdown menu that only accepts the Items existing in the game which food the animal can be fed. So, for the Sheep this would be Wheat, for the Pig this would be Carrot, etc.
 
 Below is the dropdown menu in the editor.
 
-<img width="444" alt="381089854-9813218b-2e2c-4832-b094-2727d4435165" src="https://github.com/user-attachments/assets/2a8fa960-7d19-4b1f-be07-14521c44323a">
+<img width="400" alt="381089854-9813218b-2e2c-4832-b094-2727d4435165" src="https://github.com/user-attachments/assets/2a8fa960-7d19-4b1f-be07-14521c44323a">
 
 Developers, please don't choose a Tool as food for the animal! The trouble of separating Tools and Food was greater than just having them all under the Items type.
 
