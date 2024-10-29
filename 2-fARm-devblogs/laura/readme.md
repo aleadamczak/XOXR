@@ -161,7 +161,7 @@ The fading in and out was also a little bit challenging because the Canvas objec
 
 The screenshot below is the function that manages changing the opacity of all the child elements of the Produce Pop Up. All these elements are either images or text, hence the double "if". It also has a flag "transition" which dictates whether or not the change in opacity should be smooth :).
 
-<img width="400" alt="Screenshot 2024-10-29 at 11 58 34" src="https://github.com/user-attachments/assets/ac55e404-6886-440f-8db4-7313703ba1cc">
+<img width="600" alt="Screenshot 2024-10-29 at 11 58 34" src="https://github.com/user-attachments/assets/ac55e404-6886-440f-8db4-7313703ba1cc">
 
 
 ## Produce Cooldown
