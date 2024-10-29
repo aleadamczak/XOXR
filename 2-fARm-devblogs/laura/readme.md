@@ -41,8 +41,8 @@ I was fortunate enough to find them rigged - it took some digging online, but th
 There were some challenges regarding scaling them, managing their position (especially on the Y axis, because some just wanted to float eternally) and sometimes even their rotation, but I ended up managing to make proper prefabs that could be easily expanded upon.
 
 <img width="400" alt="All animals Prefabs" src="https://github.com/user-attachments/assets/3f62cdab-a3f0-40a2-8a37-1b72bf13cc59">
-<img width="400" alt="Chicken" src="https://github.com/user-attachments/assets/f2bb613e-be7a-41d7-8b3e-c44a087c0cd4">
-￼
+<img width="200" alt="Chicken" src="https://github.com/user-attachments/assets/f2bb613e-be7a-41d7-8b3e-c44a087c0cd4">
+
 ### Animation - Walking
 The first animation to make was the Walking animation for when they idle around. This involved finding their front & back /  left & right leg GameObjects and rotating them around the Z axis with a sine function, since it’s an oscillating movement. It worked perfectly!
 
