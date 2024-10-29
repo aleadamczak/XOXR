@@ -120,7 +120,8 @@ The screenshot below is how the Produce component looks like for the Cow - she g
 When it came to the Sword, all the animals had to be assigned their specific meat type (Beef for Cow, Pork for Pig, etc.), so it was kind of “mandatory”, but when it came to the remaining tools, only the Cow had the Milk for the Bucket and the Sheep had the Wool for the Shears. And that was okay! The rest of the animals would have that set as “Nothing” and simply give you nothing if you tried to use the wrong tool on them.
 
 
-<img width="400" alt="GetProduce Script" src="https://github.com/user-attachments/assets/533e962e-8791-43ea-bfeb-88971376a485">
+<img width="500" alt="GetProduce Script" src="https://github.com/user-attachments/assets/533e962e-8791-43ea-bfeb-88971376a485">
+
 <img width="400" alt="UseBucket Script" src="https://github.com/user-attachments/assets/ce55f6b0-1077-45df-9366-8919bb2d078d">
 
 The screenshots above illustrate how the Produce script uses the GUI Manager to see what tool is selected, and only returns a piece of produce to the player if that tool is valid on that animal.
@@ -154,7 +155,7 @@ When the Script is initialized, it turns this list into a Dictionary for faster 
 
 Also, for the case when the player acquires produce faster than it can be displayed with the animations, the produce items acquired are put in a queue and played sequentially! It looks very smooth.
 
-![ezgif-4-a7ae2d4cbe](https://github.com/user-attachments/assets/b887e189-f27f-4a39-b08b-7cbcfffbbf72)
+![ezgif-1-6673df4dea](https://github.com/user-attachments/assets/ebfd3fac-99ba-4a67-973a-f63f95221745)
 
 The fading in and out was also a little bit challenging because the Canvas object in Unity doesn’t have a feature to change its transparency in its entirety, so I actually needed a support feature that got all of its children and changed their alpha (opacity) at the same time. Fortunately, it was possible and looks awesome, as it can be seen in the screen recording above).
 
