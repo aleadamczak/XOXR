@@ -45,7 +45,8 @@ There were some challenges regarding scaling them, managing their position (espe
 ### Animation - Walking
 The first animation to make was the Walking animation for when they idle around. This involved finding their front & back /  left & right leg GameObjects and rotating them around the Z axis with a sine function, since it’s an oscillating movement. It worked perfectly!
 
-![image](https://github.com/user-attachments/assets/a8d6f948-fd20-4bcb-bd0e-48c68840ec0c)
+![ezgif-3-652a49327e](https://github.com/user-attachments/assets/ec5254de-7533-4c0c-8c9a-4156863ef8e8)
+
 
 I also had to consider that we had 3 four-legged animals and one with just two legs (the chicken), so I actually had to make separate scripts for these two types of walking animations. But it was simple because they were the same at core.
 
