@@ -50,8 +50,6 @@ The first animation to make was the Walking animation for when they idle around.
 
 I also had to consider that we had 3 four-legged animals and one with just two legs (the chicken), so I actually had to make separate scripts for these two types of walking animations. But it was simple because they were the same at core.
 
-(screenshot of FourLeggedAnimator vs TwoLeggedAnimator)
-
 ### Animation - Dying
 Another animation that was much needed was the dying animation, and as simple as it sounds to make the animal “fall to the side”, it was a nightmare and took way more hours than I would like to admit!
 
@@ -59,7 +57,7 @@ At first, it seemed easy: since the animals had Colliders and Rigidbodies, I cou
 
 Of course, this meant gravity wasn’t on my side anymore… So now, I had to manually rotate each animal and make it fall to the ground level. It sounds straightforward, but getting it to look right took a lot of fine-tuning, not to mention I had to do it for all adult & baby versions of the animals, which come in different sizes.
 
-(gif of death animation)
+![ezgif-4-5ecda01f6e](https://github.com/user-attachments/assets/4b1154fc-b712-4248-8f38-a38952aaf8a4)
 
 ## IDLE ANIMAL BEHAVIOUR
 There’s never much to say about idle behaviour. Set the starting position as the “anchor” and walk to a random position around it with a certain speed. This also involved some state management in order to get the Walk animation to start and stop at the right time, but it was also fine.
@@ -70,6 +68,8 @@ A much tricky & interesting part of my development was the ledge detection and a
 
 ### How?
 This involved projecting a raycast facing downwards in front of the animal - if the raycast collided with a plane, the animal was safe to keep walking. But if the raycast suddenly had the rug pulled from under it, the animal would know to walk a little bit backwards to avoid falling or going into a wall.
+
+![ezgif-7-24067c1275](https://github.com/user-attachments/assets/a27bdc08-5c8a-4d45-83d2-f4c9d8c8e21e)
 
 ### Challenges?
 The most challenging part about this was the state management in conjunction with the Idle Behaviour script and the Death Animation script. Each of these scripts had to timely block each other so that the sheep wouldn’t walk at the same time as it dies, or keep walking to an undesirable location.
@@ -86,25 +86,29 @@ It is possible to interact with the animal in the four following ways:
 - Use a sword on it to kill it for meat
 - Give it food to satisfy its hunger
 
-Despite there being four types of interactions, I managed them through just two scripts: Feeding.cs for Food & Water, and Produce.cs for Tools and Slaughter.
+Despite there being four types of interactions, I managed them through just two scripts: **Feeding.cs** for Food & Water, and **Produce.cs** for Tools and Slaughter.
 
 ### Food & Water
 Despite the animals eating different types of food depending on their species, it was easy to centralize all the logic for making sure the player could only feed it with the right food in hand.
 
 In the Scene Inspector, in the Animal prefab’s component “Feeding”, the developer can choose from a dropdown menu that only accepts the Items existing in the game which food the animal can be fed. So, for the Sheep this would be Wheat, for the Pig this would be Carrot, etc.
 
-(put screenshot of the dropdown menu)
+Below is the dropdown menu in the editor.
 
-Then, inside the actual script, it was just a matter of comparing the “desiredFood” and the “selectedFood”, and voilá. If the wrong was selected, nothing would happen, but if they were a match, the animal would be fed.
+<img width="444" alt="Screenshot 2024-10-29 at 11 45 18" src="https://github.com/user-attachments/assets/9813218b-2e2c-4832-b094-2727d4435165">
 
-(find screenshot in script where we compare them)
+Developers, please don't choose a Tool as food for the animal! The trouble of separating Tools and Food was greater than just having them all under the Items type.
+
+Then, inside the actual script, it was just a matter of comparing the “desiredFood” and the “selectedFood”, and voilá. If the wrong food was selected, nothing would happen, but if they were a match, the animal would be fed. This simple logic is below.
+
+<img width="346" alt="Screenshot 2024-10-29 at 11 47 39" src="https://github.com/user-attachments/assets/fbe69c5f-04a5-4f0c-8412-d6402d4978c7">
 
 As for giving the animal water, this is always successful since they all need the same water.
 
 ### Tools & Slaughter
 When it comes to using tools on the animals, a question was posed - despite all of them behaving so differently when it comes to acquiring produce from them, how could we centralize the logic to keep it as simple as possible?
 
-All animals have the same one script - Produce.cs, but in the Scene Inspector, the developer can choose which “type of produce” an animal would produce from each tool: the Sword, the Shears and the Bucket.
+All animals have the same one script - **Produce.cs**, but in the Scene Inspector, the developer can choose which “type of produce” an animal would produce from each tool: the Sword, the Shears and the Bucket.
 
 (Screenshot of how it looks in the inspector)
 
