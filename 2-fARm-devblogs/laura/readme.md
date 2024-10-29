@@ -34,11 +34,11 @@ Below are: a list of the features I took ownership of, and a list of features I 
 ### Resource Acquisition - the Animal Models
 One of the reasons I brought up the idea of making a Farm Simulator heavily inspired on Minecraft was that I was 99% sure that models for the farm animals could be found online - so I took it upon myself to find them, import them and animate them.
 
-<img width="300" alt="All animals Prefabs" src="https://github.com/user-attachments/assets/3f62cdab-a3f0-40a2-8a37-1b72bf13cc59">
+<img width="400" alt="All animals Prefabs" src="https://github.com/user-attachments/assets/3f62cdab-a3f0-40a2-8a37-1b72bf13cc59">
 
 I was fortunate enough to find them rigged - it took some digging online, but then it was as easy as importing their model file and manipulating each “part” of them however I wanted!
 
-<img width="578" alt="Screenshot 2024-10-29 at 11 17 42" src="https://github.com/user-attachments/assets/0e88d650-0c96-43f0-9206-0822a951d7b0">
+<img width="400" alt="Screenshot 2024-10-29 at 11 17 42" src="https://github.com/user-attachments/assets/0e88d650-0c96-43f0-9206-0822a951d7b0">
 
 There were some challenges regarding scaling them, managing their position (especially on the Y axis, because some just wanted to float eternally) and sometimes even their rotation, but I ended up managing to make proper prefabs that could be easily expanded upon.
 
