@@ -24,7 +24,7 @@ This is the list of the main things I worked on, apart from that I also helped m
 
 The first thing I work on, was that when you start you need at least 2 animals, so they can start having babies and you can get money from them. We decided the first animals would be the sheeps. At the begginning our idea was that they would already be there when you start the game, but I quickily realized that wouldn't work for a AR application, since we needed to let the player scan their surroundings and decide where the sheep should actually be. So I created a new script called SceneInitializer and added some script to detect the player touch (or mouse for development purposes) and simply place a sheep. Once that was working I added a counter, which I used to make sure only 2 sheeps were placed. I also had created a animalCounter script with a animalCount static variable, so every time an animal was placed I was keeping track of it there as well.
 
-![image](https://github.com/user-attachments/assets/44b20a76-5ca8-481b-b5bc-9b30276095e3)
+<img src="https://github.com/user-attachments/assets/44b20a76-5ca8-481b-b5bc-9b30276095e3" width="500"/>
 
 This script was changed a lot, and the functionality to placed items from the basket was also placed here, so it now serves more as an "animalPlacer" script than a sceneInitializer.
 
@@ -37,8 +37,8 @@ I took the prefabs of the animals that were already added by Laura and modify th
 
 At this point it was also the first time i tried building to my phone, and I found out that in augmented reality the bars where looking where the animals were looking. We thought it would be better if they always faced the player, so I created a script to copy the camera rotation and ensure that the bars would always follow the camera. It was later also used for the eggs.
 
-![image](https://github.com/user-attachments/assets/2ac08e01-0352-4b5a-93b5-35b25c6e3afe)
-![image](https://github.com/user-attachments/assets/10928048-fbfb-47a0-8722-aaf3519120f7)
+<img src="https://github.com/user-attachments/assets/bc5bd738-1c68-40c5-b913-e97e9801ca68" width="310"/>
+<img src="https://github.com/user-attachments/assets/10928048-fbfb-47a0-8722-aaf3519120f7" width="480"/>
 
 After I had that working, I reapeated it for the thirst and added it to each of the animals prefabs + the babies.
 
@@ -58,9 +58,11 @@ One of the main functionality of the game is that the animals can have babies. A
 
 At this point of the game most of the functionality was already implemented, but there was no "end" to the game. We decided that the end of the game would be when you run out of animals and that the score would be the money that you had. I created a game over canvas inspired in minecraft's and I added some code to the animal counter to check if all the animals died. The screen is quite simple, as it only has the score and a respawn button. When you click the respawn button the scene is reloaded and you start the game from the beggining.
 
+
+<img src="https://github.com/user-attachments/assets/05b9b3f5-5f93-4d66-bfa4-4a1764ab398d" width="500"/>
+<img src="https://github.com/user-attachments/assets/06149f7d-bc66-4454-9df9-e95c325be456" width="500"/>
+
 ![gameover-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/de9cefc0-a0c9-4847-8730-1872ad17cb61)
-![image](https://github.com/user-attachments/assets/05b9b3f5-5f93-4d66-bfa4-4a1764ab398d)
-![image](https://github.com/user-attachments/assets/06149f7d-bc66-4454-9df9-e95c325be456)
 
 # Game Instructions screen
 
