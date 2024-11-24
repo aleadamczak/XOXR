@@ -1,3 +1,5 @@
+# Rosa Devblog- Mamma's Pizzeria
+
 ## Intro
 
 Welcome to my devblog! If you have already read the Ar projet one you Will know that I'll only go over the parts of the project that I worked on, but my groupmates have done the same so once you read the 3 devblogs you should have a full idea of our whole project and how was it implemented :)
@@ -30,6 +32,7 @@ We decided on the following ingredients for the pizza: pepperoni, pepper, olives
 ## Kneding pizza dough
 
 The first thing needed to start the pizza cooking process was kneading the pizza dough.
+
 ![image](https://github.com/user-attachments/assets/acc44ba6-f477-4772-8610-46e0b99b43d3) ->
 ![image](https://github.com/user-attachments/assets/72d91341-2d44-4806-98bf-125de890fee3)
 
