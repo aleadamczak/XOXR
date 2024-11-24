@@ -94,7 +94,7 @@ There is a very central script called CustomerRequest that handles the flow of a
 In the section above (Customer Movement), the two gifs also illustrate all of this in action.
 It is quite a big script, but here’s an example of an indispensable method: DeliverPizza().
 
-<img width="500" alt="Screenshot 2024-11-24 at 14 31 14" src="https://github.com/user-attachments/assets/3ff92929-fe08-476a-826e-9c30e4704966">
+<img width="700" alt="Screenshot 2024-11-24 at 14 31 14" src="https://github.com/user-attachments/assets/3ff92929-fe08-476a-826e-9c30e4704966">
 
 This method handles delegating the score calculation, displaying the score in front of the player, sending the player’s score to the script that will play a “reaction audio” depending on the player’s performance, and also leaving after having the pizza delivered.
 
