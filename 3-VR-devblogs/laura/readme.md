@@ -24,12 +24,20 @@ Let's get right into it :).
 
 The first step, before even touching Unity, was something we all did together - we went to a classroom with a board with a pen and drew what we envisioned “spatially” for all the four stations of our Pizzeria: Customer, Assembly, Oven, and Cutting station. Below is an image of what that draft looked like by the end of the session.
 
+![WhatsApp Image 2024-10-29 at 14 40 00](https://github.com/user-attachments/assets/33a4d5a9-9249-4ce8-acf8-e420567fde94)
+
 Then, when opening Unity, the first step was to put all the stations in place around the spawn point for the player! If you could please ignore the giant pizza cutter, below is an image of what that initial stage looked like as well:
 
+![WhatsApp Image 2024-11-10 at 17 35 40](https://github.com/user-attachments/assets/ac1faac9-6ec2-4e53-bdda-466789413e82)
+
 At a later stage, it came the time to actually have an environment other than the Unity infinite plane. For this, I searched for and downloaded a “beachside restaurant” model and removed some game objects to make space for our kitchen.
+
 Original beach restaurant:
+<img width="714" alt="Screenshot 2024-11-24 at 13 25 47" src="https://github.com/user-attachments/assets/48ff1f4a-c81b-4081-89ab-1fe436d99f7c">
 
 So I downloaded that, removed the little house to make space for our kitchen, moved the tables around to make space for the customers to walk, extended the floor backwards so it wouldn’t feel like a floating island and also put a dark blue plane under it.
+
+<img width="602" alt="Screenshot 2024-11-24 at 13 50 25" src="https://github.com/user-attachments/assets/9d1e75b8-b366-4b4e-b9d8-1797cb444ce1">
 
 As for the lights, the lightning settings of our Pizzeria were terrible at the beginning, with really harsh lightning that made some of the game objects nearly invisible - see a poor example below:
 
