@@ -54,7 +54,7 @@ And that’s it for setting up the environment of the scene!
 ## Customer Instantiation
 
 For us to make pizzas, we would need customers to serve them to. For that, a script called CustomerGenerator was made - it holds a list of four different Customer prefabs and puts them into the scene one by one - so that when one customer leaves after he has been served, another one comes straight after. The script also handled randomly picking a customer from the list and making sure you don’t repeat a customer before you’ve gone through all of them.
-Below is a picture of all the customer prefabs.
+Below is a picture of all the customer prefabs (for which I don't take ownership of coz Rosa was the one who got the cute models :D).
 
 <img width="300" alt="Screenshot 2024-11-24 at 14 18 32" src="https://github.com/user-attachments/assets/f9dff1a5-8fd2-492e-a10f-05381006dd57">
 
