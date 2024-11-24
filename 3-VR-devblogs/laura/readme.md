@@ -24,7 +24,7 @@ Let's get right into it :).
 
 The first step, before even touching Unity, was something we all did together - we went to a classroom with a board with a pen and drew what we envisioned “spatially” for all the four stations of our Pizzeria: Customer, Assembly, Oven, and Cutting station. Below is an image of what that draft looked like by the end of the session.
 
-![WhatsApp Image 2024-10-29 at 14 40 00](https://github.com/user-attachments/assets/33a4d5a9-9249-4ce8-acf8-e420567fde94)
+<img width="500" alt="Screenshot 2024-11-24 at 13 25 47" src="https://github.com/user-attachments/assets/33a4d5a9-9249-4ce8-acf8-e420567fde94">
 
 Then, when opening Unity, the first step was to put all the stations in place around the spawn point for the player! If you could please ignore the giant pizza cutter, below is an image of what that initial stage looked like as well:
 
@@ -128,7 +128,7 @@ Each quarter has a slot for two types of ingredients - in each of these slots, t
 
 To display the amount of time the customer wishes the pizza to be cooked, a Clock object was used - but more on that later in the Oven Section.
 
-<img width="116" alt="Mama's Pizza" src="https://github.com/user-attachments/assets/72ff55b6-7c90-4fa2-a671-fc49473e3304">
+<img width="43" alt="Screenshot 2024-11-24 at 14 50 09" src="https://github.com/user-attachments/assets/87083f74-f1f5-47ef-8355-f6a16ea18c45">
 
 ### Cuts
 
@@ -170,7 +170,7 @@ The oven functionality was actually the first one I made and it was a lot of fun
 <img width="500" alt="Screenshot 2024-11-24 at 15 43 22" src="https://github.com/user-attachments/assets/cee43d86-18bd-4279-8fa9-f911e443031a">
 
 - Making a script for each Oven Hole with a pointer to the corresponding clock, so that every time a Pizza enters an Oven Hole, the clock starts ticking, and when the pizza exits it, the Oven Hole stores in the pizza object how long it was cooked for.
-<img width="350" alt="Screenshot 2024-11-24 at 15 44 13" src="https://github.com/user-attachments/assets/e810619c-4871-4230-8bc5-fe7ee6e881e0">
+<img width="500" alt="Screenshot 2024-11-24 at 15 44 13" src="https://github.com/user-attachments/assets/e810619c-4871-4230-8bc5-fe7ee6e881e0">
 
 - Adding a low poly fire from the asset store to the bottom of the Oven.
 ![ezgif-7-68b4c6dc60](https://github.com/user-attachments/assets/ec7b1741-0ede-44da-ac5c-94af1d477965)
@@ -201,7 +201,11 @@ These calculations are mostly just math so I will not bore you with the details.
 
 The section above briefly described how scores are calculated - but that’s happening just behind the scenes. How can the player actually see what scores he got? Well, displaying the scores was a lot of fun. I made four thin cilinders, text over them to say what the score refers to and text in front of them them to hold the actual scores.
 
+<img width="489" alt="Screenshot 2024-11-24 at 15 52 26" src="https://github.com/user-attachments/assets/a7ac929b-d879-4dde-8d12-0c9dda66a0a9">
+
 But how? Well, the Parent of all these GameObjects has the script that can change their text - and it is called from the Customer himself, because he knows what we scored on the pizza he wanted.
+
+<img width="600" alt="Screenshot 2024-11-24 at 15 53 42" src="https://github.com/user-attachments/assets/89bb1ab7-e60e-4bf0-ac4f-0fe467f6f890">
 
 ## Audio
 
