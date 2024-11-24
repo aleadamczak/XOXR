@@ -221,3 +221,5 @@ And that’s it from my side! :) So to summarize, I would say I took ownership o
 - The Customer “flow” (instantiation, request and respective visual representation, movement, delivery, score)
 - The Oven station
 - The Environment and Audio
+  
+Thanks for reading through (if you did ;))
