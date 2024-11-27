@@ -1,8 +1,8 @@
 # XRD Group 9 - XOXR
 Members:
-- Aleksandra Adamczak (??????)
+- Aleksandra Adamczak (326021)
 - Laura Rebelo (315174)
-- Rosa Briales (??????)
+- Rosa Briales (315250)
 
 ### Projects Video Demonstrations
 - AR (fARm): https://youtu.be/hvfmV9MAdDg
