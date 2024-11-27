@@ -1,0 +1,58 @@
+# Blender MTL File: 'cutter pizza.blend'
+# Material Count: 5
+
+newmtl Material.002
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+
+newmtl handle
+Ns 463.185265
+Ka 0.623188 0.623188 0.623188
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 3
+map_Kd pizza cutter\\handle\\Metal044A_2K-JPG_Color.jpg
+
+newmtl plastic_handle
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Bump pizza cutter\\plastic light black\\Plastic011_2K-JPG_NormalGL.jpg
+map_Kd pizza cutter\\plastic light black\\Plastic011_2K-JPG_Color.jpg
+map_Ns pizza cutter\\plastic light black\\Plastic011_2K-JPG_Roughness.jpg
+
+newmtl sharp_edges
+Ns 738.421562
+Ka 0.217391 0.217391 0.217391
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 3
+map_Kd pizza cutter\\sharp edges\\1.jpeg
+
+newmtl wheel
+Ns 408.742933
+Ka 0.347826 0.347826 0.347826
+Kd 0.800000 0.800000 0.800000
+Ks 0.934783 0.934783 0.934783
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 3
+map_Kd pizza cutter\\pizza cutter 2.fbm\\images - 2024-05-28T131810.517.jpeg
