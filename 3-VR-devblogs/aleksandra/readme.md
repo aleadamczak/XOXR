@@ -1,64 +1,97 @@
-Hello,
-I'm Aleksandra and I will describe my contribution to our VR project, Mama's Pizzeria.
+### Introduction
 
-The project is oriented around the same concept as the very popular children's game, Papa's Pizzeria. The goal of the game is to assemble and prepare a pizza in the same way as described on the ticket from the customer in the shortest possible time. This includes: 
-Assembly station,
-Oven Station,
-Packing Station and 
-Delivery station.
+Hello,  
+I'm Aleksandra, and I will describe my contribution to our VR project, *Mama's Pizzeria*.
 
-I was responsible for the Packing Station where the user will be able to cut the pizza with the pizza cutter. Every ticket comes with request for a different type of cut. It can include vertical, horizontal and/or diagonal cuts.
-In the original game, Papa's Pizzeria, you are able to place cuts anywhere on the pizza, however, this has turned out to be quite complicated to implement on a 3D object. 
-I have tried different approaches to implement this functionality. Firstly, I tried applying the cuts through drawing them on the pizza. This would allow the user to make completely custom cuts which would edit the texture on top. However, in our case at the point of implementing this functionality we didn't know yet if we are going to have a texture that would cover the whole pizza of if it will be another 3D object therefore I couldn't pursue it any further. Another option was to use an external library EzySlice however there were problems with incorporating it into our project. Eventually, I decided to split the pizza model in blender and when the user drags the pizza cutter across the pizza, the distance between slices increases, creating effect of slicing the pizza.
-colliders etc
-How does it work?
-The pizza prefab has two colliders(triggers) on the opposite sides of the pizza. There is also a center collider which is common for every cut. When all three colliders have been triggered by the PizzaCutter the cut is made.
+The project is based on the concept of the popular children's game *Papa's Pizzeria*. The goal of the game is to assemble and prepare a pizza according to the customer's ticket in the shortest possible time. This includes:  
+- Assembly Station  
+- Oven Station  
+- Packing Station  
+- Delivery Station  
 
-![image](https://github.com/user-attachments/assets/6da4c5bf-62a2-43c3-a107-3f273317bca2)
-![image](https://github.com/user-attachments/assets/f4c7204b-6bea-40fb-9868-f061bf21638a)
+---
 
-All of the Cuts (vertical, horizontal and diagonal) are split into their own GameObjects with two Cuts as their children, the colliders on both edges:
+### Task Description
 
-![Unity_XhPTXlNxY7](https://github.com/user-attachments/assets/390d2feb-ffae-4a36-a296-9512c2b17223)
-The PizzaCutter script is assigned to the all of the parent Cuts. It requires an indication of the type of cut, a reference to the object with the Pizza script, references to both of the edge Cuts and the Cut in the center, the vector change for the slices the will need to be moved when applying the cut and the pizza slices that will need to be moved:
+I was responsible for the Packing Station, where the user can cut the pizza using a pizza cutter. Each ticket includes a request for a specific type of cut, such as vertical, horizontal, and/or diagonal cuts.  
 
-![image](https://github.com/user-attachments/assets/702ebc49-5ca4-4f8e-b26c-035adb21af51)
+In the original game, *Papa's Pizzeria*, players could place cuts anywhere on the pizza. However, implementing this functionality on a 3D object turned out to be quite complex.  
 
-The PizzaCutter script is listening to the events placed in the Cut scripts which are invoked whenever the pizza cutter object triggers the colliders.
-PizzaCutter script:
+I explored several approaches to achieve this:  
+1. **Texture Modification**: I initially attempted to allow custom cuts by drawing directly on the pizza. This would edit the texture on top, enabling the user to create unique cuts. However, at the time, we were unsure whether the pizza would have a single texture covering its entire surface or consist of multiple 3D objects. This uncertainty prevented further progress with this method.  
+2. **EzySlice Library**: I also considered using an external library, *EzySlice*, but encountered difficulties integrating it into our project.  
+3. **Blender-Split Model**: Ultimately, I decided to pre-split the pizza model in Blender. When the user drags the pizza cutter across the pizza, the distance between slices increases, creating the effect of slicing.  
 
-![image](https://github.com/user-attachments/assets/7f8ac632-53d4-4919-8e00-fea5ff731809)
+---
 
-Cut script:
+### How It Works
 
-![image](https://github.com/user-attachments/assets/1784d2f0-1c18-4ea1-b856-19e3ed49667a)
+The pizza prefab includes two trigger colliders on opposite sides of the pizza and a center collider common to all cuts. When all three colliders are triggered by the pizza cutter, the cut is made.  
 
-The PizzaCutter script has an enum variable indicating which colliders (Cuts) have already been triggered:
+#### Structure of Cuts
 
-![image](https://github.com/user-attachments/assets/2375b949-93c9-4423-8a4f-1747e7e8e21e)
+Each type of cut (vertical, horizontal, diagonal) is a separate GameObject with two child objects representing the edge colliders:  
 
-Whenever any of the edge colliders get triggered the state is changed from None to First Edge, therefore, it doesn't matter where the player begins their cut. Once the center collider has been triggered as well, the script is expecting the collision with the other edge.
+![Unity Example](https://github.com/user-attachments/assets/390d2feb-ffae-4a36-a296-9512c2b17223)
 
-![image](https://github.com/user-attachments/assets/df346477-f6d5-4c2c-876a-2f3ef75af18f)
+The **PizzaCutter** script is assigned to the parent object of each cut. This script requires:  
+- The type of cut (vertical, horizontal, diagonal).  
+- A reference to the Pizza object.  
+- References to the edge and center colliders.  
+- A vector representing how slices will move when the cut is applied.  
+- References to the pizza slices that will move.  
 
-Once the pizza cutter object gets to the opposite edge, the cut will be made and the assigned pizza slices will be moved in the direction indicated by the Vector value. The AddPizzaCut method will be called on the Pizza to update the cuts that have been made so far:
+![PizzaCutter Script](https://github.com/user-attachments/assets/702ebc49-5ca4-4f8e-b26c-035adb21af51)
 
-![image](https://github.com/user-attachments/assets/3a562d74-c359-4b68-91c5-0e1c9c95bfe6)
+The **PizzaCutter** script listens to events in the Cut scripts. These events are invoked when the pizza cutter triggers the colliders.
 
-We have decided to split the Pizza script into Pizza and PizzaObject to keep the code more organised. The Pizza script is the one distributing information and reacting based on what is happening to the Pizza prefab. The PizzaObject is a place holder of all information about the pizza that will be later on compared to the customer order. Therefore, the AddPizzaCut method will be called and it will forward the information about the cuts to the PizzaObject:
+---
 
-PizzaObject:
+### Logic Behind Cuts
 
-![image](https://github.com/user-attachments/assets/ebdbe234-33fe-450e-816b-682884a20c9e)
+The **PizzaCutter** script uses an enum to track which colliders have been triggered:  
 
-Pizza:
+![Enum Example](https://github.com/user-attachments/assets/2375b949-93c9-4423-8a4f-1747e7e8e21e)
 
-![image](https://github.com/user-attachments/assets/d3d3fa59-6293-4447-b197-ccfe004a3f89)
+1. When an edge collider is triggered, the state changes from *None* to *First Edge*, allowing the player to start the cut from any side.  
+2. After the center collider is triggered, the script waits for the opposite edge to be triggered.  
+3. Once all colliders are triggered, the cut is applied, and the specified pizza slices move according to the assigned vector value. The **AddPizzaCut** method is called to update the Pizza object with the completed cut.
 
-This is how the cutting process looks like in the play mode:
+---
 
-![PizzaCuttingGIF](https://github.com/user-attachments/assets/79aeb16c-5f00-4bc0-b06b-1d6a8985ab57)
+### Pizza Logic Organization
 
+To maintain clean code, we split the pizza logic into two scripts:  
+1. **Pizza**: Handles interaction logic and updates based on player actions.  
+2. **PizzaObject**: Stores the state of the pizza, including cuts, for later comparison with the customer's order.
 
-Before implementig this approach, the logic of this action was assigned to the pizza cutter: it would recognize each collider by its tag (e.g. "Vertical1") and apply the cut. Although the actions were very similar, all of them were held in a single script which made it unnecessarily complex. Additionally, for this to work it was necessary for the pizza cutter prefab to have a reference to the pizza prefab it was cutting which becomes problematic because (as it turns out :) ) you cannot have a reference to another prefab in a prefab. Therefore, the roles were reversed and it is the pizza prefab recognising collision with the pizza cutter by its tag and applying the changes to itself. 
+![PizzaObject Script](https://github.com/user-attachments/assets/ebdbe234-33fe-450e-816b-682884a20c9e)  
+![Pizza Script](https://github.com/user-attachments/assets/d3d3fa59-6293-4447-b197-ccfe004a3f89)
 
+---
+
+### Improved Implementation
+
+Initially, the logic for cuts was handled entirely by the pizza cutter script. It would identify colliders based on their tags (e.g., *Vertical1*) and apply the cut. While functional, this approach centralized all actions in one script, making it overly complex. Additionally, the pizza cutter prefab required a reference to the pizza prefab it was cutting, which caused issues—Unity does not allow one prefab to reference another.  
+
+To resolve this, we reversed the roles:  
+- The pizza prefab now recognizes collisions with the pizza cutter based on its tag.  
+- The pizza prefab applies changes to itself, simplifying the structure and making the code more modular.  
+
+---
+
+This is how the cutting process looks in play mode:  
+
+![Pizza Cutting GIF](https://github.com/user-attachments/assets/79aeb16c-5f00-4bc0-b06b-1d6a8985ab57)
+
+The cuts also have an audio assigned to make the action more satisfying :)
+
+### Conclusions
+
+As much as this task didn't seem very complicated at first, it became trickier during implementation. It gave me a lot of room to familiarize myself with Unity and Blender. Game objects' physics components, like Rigidbody and colliders, turned out to be especially important, as the wrong setup caused many bugs.
+
+Initially, the pizza prefab was set to rotate to a specific degree when it reached the packing station, making it easier for the user to place the cuts in the correct directions. However, modifying the Rigidbody component caused the pizza to fall through the table :)
+
+Another aspect that still needs adjustment is the slice direction of movement when being sliced. Right now, the pizza takes on an unnatural shape after cutting. However, after applying the same vector changes to slices in the prefab, it behaves as expected.
+
+Thank you for reading, and I hope you got the chance to enjoy the game :)
