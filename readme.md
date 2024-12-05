@@ -19,3 +19,5 @@ Members:
     - This folder has a subfolder for each of the members where they wrote their devblogs.
 - 3-VR-source-code
     - This folder has the source code for the VR project.
+- 4-personal-reflections
+    - This folder has a subfolder for each of the members where they wrote their personal reflection.
