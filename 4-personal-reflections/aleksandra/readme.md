@@ -38,7 +38,7 @@ Throughout the whole process, the girls were extremely helpful, and we kept each
 ---
 
 ## Setup and Expo
-Collectively with the girls we spent a couple of days trying to work out connecting to Quest and finding the best way to show our game. It was very tricky since we needed a laptop with a exceptionally good graphics card and even with that the Link turned out to be particulalry choosy with our selection of cables 😊 Eventually, we managed to set everything up, however, it was definetely the most frustrating part of the VR project.
+Collectively with the girls we spent a couple of days trying to work out connecting to Quest and finding the best way to show our game. It was very tricky since we needed a laptop with a exceptionally good graphics card and even with that the Link turned out to be particulalry picky with our selection of cables 😊 Eventually, we managed to set everything up, however, it was definetely the most frustrating part of the VR project.
 
 ---
 
